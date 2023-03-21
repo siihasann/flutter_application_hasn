@@ -7,7 +7,7 @@ class ColumnWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Widget Column"),
+        title: const Text("Widget Column Belajar"),
       ),
       body: Column(
         children: const [
