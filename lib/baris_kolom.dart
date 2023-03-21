@@ -7,7 +7,7 @@ class BarisKolom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Baris dan Kolom"),
+        title: const Text("Baris dan Kolom Belajar"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
