@@ -9,27 +9,33 @@ class BarisKolom extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Baris dan Kolom Belajar"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Row(children: const [
-            Text("Baris1, Kolom1 ,"),
-            Text("Baris1, Kolom2 ,"),
-            Text("Baris1, Kolom3 ,"),
-            Text("Baris1, Kolom4 ")
-          ]),
-          Row(children: const [
-            Text("Baris2, Kolom1, "),
-            Text("Baris2, Kolom2, "),
-            Text("Baris2, Kolom3, "),
-            Text("Baris2, Kolom4 ")
-          ]),
-          Row(children: const [
-            Text("Baris3, Kolom1, "),
-            Text("Baris3, Kolom2, "),
-            Text("Baris3, Kolom3, "),
-            Text("Baris3, Kolom4 ")
-          ])
+          for (var i = 1; i < 4; i++)
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                for (var j = 1; j < 4; j++) Text("Baris $j, Kolom $i")
+              ],
+            )
+          //   Text("Baris1, Kolom1 ,"),
+          //   Text("Baris1, Kolom2 ,"),
+          //   Text("Baris1, Kolom3 ,"),
+          //   Text("Baris1, Kolom4 ")
+          // ]),
+          // Row(children: const [
+          //   Text("Baris2, Kolom1, "),
+          //   Text("Baris2, Kolom2, "),
+          //   Text("Baris2, Kolom3, "),
+          //   Text("Baris2, Kolom4 ")
+          // ]),
+          // Row(children: const [
+          //   Text("Baris3, Kolom1, "),
+          //   Text("Baris3, Kolom2, "),
+          //   Text("Baris3, Kolom3, "),
+          //   Text("Baris3, Kolom4 ")
+          // ])
         ],
       ),
     );
