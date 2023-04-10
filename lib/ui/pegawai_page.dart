@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import '../model/data.dart';
 import '../model/pegawai.dart';
-import 'pegawai_detail.dart';
+import 'pegawai_item.dart';
+import 'pegawai_form.dart';
 
 class PegawaiPage extends StatefulWidget {
   const PegawaiPage({super.key});
@@ -13,40 +15,34 @@ class _PegawaiPageState extends State<PegawaiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Data Pegawai")),
-      body: ListView(
-        children: [
+      appBar: AppBar(
+        title: const Text("Data Pegawai"),
+        actions: [
           GestureDetector(
-            child: Card(
-              child: ListTile(
-                title: const Text("Data Pegawai"),
-              ),
-            ),
+            child: const Icon(Icons.add),
             onTap: () {
-              Pegawai datapegawai = new Pegawai(
-                  namaPegawai: "Hasan Najib",
-                  nip: "12210820",
-                  tanggal_lahir: "1 February 2003",
-                  nomor_telepon: "085842106413",
-                  email: "mashasanr@gmail.com",
-                  password: "1234567");
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          PegawaiDetail(pegawai: datapegawai)));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PegawaiForm()));
             },
-          ),
-          Card(
-            child: ListTile(
-              title: const Text("Poli Kandungan"),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: const Text("Poli Gigi"),
-            ),
           )
+        ],
+        // title: const Text("Data Pegawai")
+      ),
+      body: ListView(
+        children: <Widget>[
+          for (Map i in pegawai) PegawaiItem(pegawai: Pegawai(i))
+          // GestureDetector(
+          //   child: Card(
+          //     child: ListTile(title: Text(i['nama'])),
+          //   ),
+          //   onTap: () {
+          //     Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) =>
+          //                 PegawaiDetail(pegawai: new Pegawai(i))));
+          //   },
+          // )
         ],
       ),
     );

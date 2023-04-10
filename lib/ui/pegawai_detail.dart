@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/pegawai.dart';
+import '../model/data.dart';
 
 class PegawaiDetail extends StatefulWidget {
   final Pegawai pegawai;
@@ -14,51 +15,60 @@ class _PegawaiDetailState extends State<PegawaiDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Detail Pegawai")),
-      body: Column(
-        children: [
-          SizedBox(height: 20),
-          Text(
-            "Nama Pegawai : ${widget.pegawai.namaPegawai}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Nip : ${widget.pegawai.nip}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Tanggal Lahir : ${widget.pegawai.tanggal_lahir}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Nomor Telepon : ${widget.pegawai.nomor_telepon}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Email : ${widget.pegawai.email}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Password : ${widget.pegawai.password}",
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                  onPressed: () {},
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  child: const Text("Ubah")),
-              ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text("Hapus")),
-            ],
-          )
-        ],
-      ),
-    );
+        appBar: AppBar(title: Text("Detail Pegawai")),
+        body: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const SizedBox(height: 50),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(textAlign: TextAlign.left, 'Nama'),
+                      Text(textAlign: TextAlign.left, 'NIP'),
+                      Text(textAlign: TextAlign.left, 'Email'),
+                      Text(textAlign: TextAlign.left, 'Tanggal Lahir'),
+                      Text(textAlign: TextAlign.left, 'Nomor Telepon')
+                    ]),
+                Column(children: const [
+                  Text(' : '),
+                  Text(' : '),
+                  Text(' : '),
+                  Text(' : '),
+                  Text(' : ')
+                ]),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("${widget.pegawai.nama}"),
+                    Text("${widget.pegawai.nip}"),
+                    Text("${widget.pegawai.email}"),
+                    Text("${widget.pegawai.tanggal_lahir}"),
+                    Text("${widget.pegawai.nomor_telepon}")
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                    onPressed: () {},
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                    child: const Text("Ubah")),
+                ElevatedButton(
+                    onPressed: () {},
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    child: const Text("Hapus")),
+              ],
+            )
+          ],
+        ));
   }
 }
