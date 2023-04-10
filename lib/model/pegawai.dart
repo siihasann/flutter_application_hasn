@@ -1,21 +1,19 @@
-import 'package:flutter_application_1/model/pegawai.dart';
-
 class Pegawai {
-  int? id;
-  String nip;
-  String namaPegawai;
-  String tanggal_lahir;
-  String nomor_telepon;
-  String email;
-  String password;
+  late int id;
+  late String nip;
+  late String nama;
+  late String tanggal_lahir;
+  late String nomor_telepon;
+  late String email;
+  late String password;
 
-  Pegawai({
-    this.id,
-    required this.nip,
-    required this.namaPegawai,
-    required this.tanggal_lahir,
-    required this.nomor_telepon,
-    required this.email,
-    required this.password,
-  });
+  Pegawai(Map pegawai) {
+    id = pegawai['id'];
+    nip = pegawai['nip'];
+    nama = pegawai['nama'];
+    tanggal_lahir = pegawai['tanggal_lahir'];
+    nomor_telepon = pegawai['nomor_telepon'];
+    email = pegawai['email'];
+    password = pegawai['password'];
+  }
 }
