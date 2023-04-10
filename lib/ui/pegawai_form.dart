@@ -19,7 +19,20 @@ class _PegawaiFormState extends State<PegawaiForm> {
             children: [
               TextField(
                   decoration: const InputDecoration(labelText: "Nama Pegawai")),
-              SizedBox(height: 20),
+              SizedBox(height: 15),
+              TextField(
+                  decoration:
+                      const InputDecoration(labelText: "Tanggal Lahir")),
+              SizedBox(height: 15),
+              TextField(
+                  decoration:
+                      const InputDecoration(labelText: "Nomor Telepon")),
+              SizedBox(height: 15),
+              TextField(decoration: const InputDecoration(labelText: "Email")),
+              SizedBox(height: 15),
+              TextField(
+                  decoration: const InputDecoration(labelText: "Password")),
+              SizedBox(height: 15),
               ElevatedButton(onPressed: () {}, child: const Text("Simpan"))
             ],
           ),
