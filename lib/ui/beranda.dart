@@ -3,8 +3,10 @@ import 'package:flutter_application_1/ui/beranda.dart';
 import '../model/pegawai.dart';
 import '../model/pasien.dart';
 import 'poli_page.dart';
+import 'pegawai_page.dart';
 import 'pegawai_detail.dart';
 import 'pasien_detail.dart';
+import 'pasien_page.dart';
 
 class Beranda extends StatefulWidget {
   const Beranda({super.key});
@@ -39,37 +41,19 @@ class _BerandaPageState extends State<Beranda> {
               ),
             ),
             onTap: () {
-              Pegawai datapegawai = new Pegawai(
-                  namaPegawai: "Hasan Najib",
-                  nip: "12210820",
-                  tanggal_lahir: "1 February 2003",
-                  nomor_telepon: "085842106413",
-                  email: "mashasanr@gmail.com",
-                  password: "1234567");
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          PegawaiDetail(pegawai: datapegawai)));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PegawaiPage()));
             },
           ),
           GestureDetector(
             child: Card(
               child: ListTile(
-                title: const Text("Pasiaen"),
+                title: const Text("Data Pasien"),
               ),
             ),
             onTap: () {
-              Pasien datapasien = new Pasien(
-                  nama: "July",
-                  nomor_rm: "12210820",
-                  tanggal_lahir: "1 February 2003",
-                  nomor_telepon: "085842106413",
-                  alamat: "tawangsari");
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PasienDetail(pasien: datapasien)));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PasienPage()));
             },
           )
         ],

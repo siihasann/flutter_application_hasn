@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/pasien.dart';
+import '../model/data.dart';
 
 class PasienDetail extends StatefulWidget {
   final Pasien pasien;
@@ -14,47 +15,60 @@ class _PasienDetailState extends State<PasienDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Detail Pasien")),
-      body: Column(
-        children: [
-          SizedBox(height: 20),
-          Text(
-            "Nama Pasien : ${widget.pasien.nama}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Nomor Rm : ${widget.pasien.nomor_rm}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Tanggal Lahir : ${widget.pasien.tanggal_lahir}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Nomor Telepon : ${widget.pasien.nomor_telepon}",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Alamat : ${widget.pasien.alamat}",
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                  onPressed: () {},
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  child: const Text("Ubah")),
-              ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text("Hapus")),
-            ],
-          )
-        ],
-      ),
-    );
+        appBar: AppBar(title: Text("Detail Pasien")),
+        body: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const SizedBox(height: 50),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(textAlign: TextAlign.left, 'Nama'),
+                      Text(textAlign: TextAlign.left, 'Nomor Rm'),
+                      Text(textAlign: TextAlign.left, 'Alamat'),
+                      Text(textAlign: TextAlign.left, 'Tanggal Lahir'),
+                      Text(textAlign: TextAlign.left, 'Nomor Telepon')
+                    ]),
+                Column(children: const [
+                  Text(' : '),
+                  Text(' : '),
+                  Text(' : '),
+                  Text(' : '),
+                  Text(' : ')
+                ]),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("${widget.pasien.nama}"),
+                    Text("${widget.pasien.nomor_rm}"),
+                    Text("${widget.pasien.alamat}"),
+                    Text("${widget.pasien.tanggal_lahir}"),
+                    Text("${widget.pasien.nomor_telepon}")
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                    onPressed: () {},
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                    child: const Text("Ubah")),
+                ElevatedButton(
+                    onPressed: () {},
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    child: const Text("Hapus")),
+              ],
+            )
+          ],
+        ));
   }
 }

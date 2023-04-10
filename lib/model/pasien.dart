@@ -1,19 +1,19 @@
 import 'package:flutter_application_1/model/pasien.dart';
 
 class Pasien {
-  int? id;
-  String nomor_rm;
-  String nama;
-  String tanggal_lahir;
-  String nomor_telepon;
-  String alamat;
+  late int id;
+  late String nomor_rm;
+  late String nama;
+  late String tanggal_lahir;
+  late String nomor_telepon;
+  late String alamat;
 
-  Pasien({
-    this.id,
-    required this.nomor_rm,
-    required this.nama,
-    required this.tanggal_lahir,
-    required this.nomor_telepon,
-    required this.alamat,
-  });
+  Pasien(Map pasien) {
+    id = pasien['id'];
+    nomor_rm = pasien['nomor_rm'];
+    nama = pasien['nama'];
+    tanggal_lahir = pasien['tanggal_lahir'];
+    nomor_telepon = pasien['nomor_telepon'];
+    alamat = pasien['alamat'];
+  }
 }
