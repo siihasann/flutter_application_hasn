@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '/ui/beranda.dart';
+import 'Getdata1.dart';
+import '/ui/Beranda.dart';
 
 void main() {
   runApp(const MyApp());
